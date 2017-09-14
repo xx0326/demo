@@ -2,9 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Demo</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#showA").click(function(){
+		//alert('it\'s me!');
+		$("#result").load("a.html", function() {
+			alert("Load was performed.");
+		});
+	});
+});
+
+</script>
 </head>
 <body>
-Just Hello！
+Just A Demo！
+<button id="showA">show A</button>
+<div id="result"> non .</div>
 </body>
 </html>
