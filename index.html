@@ -3,26 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <title>Demo</title>
+<!--  Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<!-- JQuery 核心 JavaScript 文件 -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#showA").click(function(){
-		//alert('it\'s me!');
-		$("#result").load("a.html", function() {
-			alert("Load was performed.");
-		});
+	$("#page").load("a.html", function() {
+	});
+	
+	$("#zy").click(function(){
+		navNon();
+		$("#zy").addClass("active");
+		$("#page").load("a.html");
+	});
+	$("#wz").click(function(){
+		navNon();
+		$("#wz").addClass("active");
+		$("#page").load("b.html");
+	});
+	$("#grd").click(function(){
+		navNon();
+		$("#grd").addClass("active");
+		$("#page").load("c.html");
 	});
 });
-
+function navNon(){
+	$("#nav li").removeClass("active");
+}
 </script>
+<style type="text/css">
+body{
+margin: 0px;padding: 0px;
+}
+#container{
+width: 90%;
+margin: auto;
+}
+#logo{
+line-height: 90px;
+}
+</style>
 </head>
 <body>
-<div id="hand">
-	<div id="logo">Just A Demo！</div>
-	<div id="nav"></div>
-</div>
+<div id="container">
+	<div id="hand">
+		<div id="logo">Just A Demo！</div>
+		<div id="nav">
+			<ul class="nav nav-tabs" id="nav">
+			  <li id="zy" role="presentation" class="active"><a>主页</a></li>
+			  <li id="wz" role="presentation"><a>文章</a></li>
+			  <li id="grd" role="presentation"><a>个人档</a></li>
+			</ul>
+		</div>
 
-<button id="showA">show A</button>
-<div id="result"> non .</div>
+	</div>
+	
+	<div id="page"> non .</div>
+</div>
 </body>
 </html>
